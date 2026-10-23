@@ -1,0 +1,6 @@
+{
+  "name": "Horizon Digital Media",
+  "description": "Creative production and digital services studio founded by Ahsan Yousaf, specializing in video editing, graphic design, UGC, CGI ads, AI video, and custom web development.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

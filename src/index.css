@@ -1,0 +1,405 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #070D18;
+    --surface: #0d1524;
+    --surface-2: #111c2e;
+    --text: #f6fbff;
+    --muted: #9aa9bd;
+    --line: rgba(255, 255, 255, 0.09);
+    --primary: #00A88F;
+    --secondary: #00E5FF;
+    --glow: rgba(0, 229, 255, 0.22);
+    --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+    --radius: 24px;
+    --header: 72px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  [data-theme-mode="light"] {
+    --bg: #f4f7fb;
+    --surface: #ffffff;
+    --surface-2: #e9eff7;
+    --text: #081220;
+    --muted: #586981;
+    --line: rgba(0, 0, 0, 0.08);
+    --shadow: 0 16px 40px rgba(8, 18, 32, 0.06);
+  }
+
+  /* Distinct Atmospheric Backgrounds for each color theme as requested */
+  [data-color-theme="teal"] {
+    --bg: #050f16;
+    --surface: #0a1822;
+    --surface-2: #0f2230;
+    --primary: #00A88F;
+    --secondary: #00E5FF;
+    --glow: rgba(0, 229, 255, 0.25);
+  }
+
+  [data-color-theme="dark-blue"] {
+    --bg: #030816;
+    --surface: #071329;
+    --surface-2: #0d1e3d;
+    --primary: #1E40AF;
+    --secondary: #3B82F6;
+    --glow: rgba(59, 130, 246, 0.32);
+  }
+
+  [data-color-theme="dark-yellow"] {
+    --bg: #140d02;
+    --surface: #1f1505;
+    --surface-2: #2e1f08;
+    --primary: #B45309;
+    --secondary: #F59E0B;
+    --glow: rgba(245, 158, 11, 0.32);
+  }
+
+  [data-color-theme="dark-red"] {
+    --bg: #150407;
+    --surface: #22070d;
+    --surface-2: #330b14;
+    --primary: #991B1B;
+    --secondary: #EF4444;
+    --glow: rgba(239, 68, 68, 0.32);
+  }
+
+  [data-color-theme="dark-purple"] {
+    --bg: #0f0417;
+    --surface: #180826;
+    --surface-2: #240d38;
+    --primary: #6B21A8;
+    --secondary: #A855F7;
+    --glow: rgba(168, 85, 247, 0.32);
+  }
+
+  /* Light mode overrides for themes */
+  [data-theme-mode="light"][data-color-theme="teal"] {
+    --bg: #f2f9f9;
+    --surface: #ffffff;
+    --surface-2: #e3f2f2;
+  }
+  [data-theme-mode="light"][data-color-theme="dark-blue"] {
+    --bg: #f0f4fc;
+    --surface: #ffffff;
+    --surface-2: #e1ebfa;
+  }
+  [data-theme-mode="light"][data-color-theme="dark-yellow"] {
+    --bg: #fdfaf2;
+    --surface: #ffffff;
+    --surface-2: #fcf1da;
+  }
+  [data-theme-mode="light"][data-color-theme="dark-red"] {
+    --bg: #fcf2f3;
+    --surface: #ffffff;
+    --surface-2: #fae2e5;
+  }
+  [data-theme-mode="light"][data-color-theme="dark-purple"] {
+    --bg: #f8f2fd;
+    --surface: #ffffff;
+    --surface-2: #f1e2fa;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+
+  h1 {
+    font-family: 'Georgia', serif;
+  }
+
+  h2, h3, h4, .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* Subtle background dot/cross grid */
+.hero-dot-grid {
+  background-image: radial-gradient(var(--secondary) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.12;
+}
+
+[data-theme-mode="light"] .hero-dot-grid {
+  opacity: 0.07;
+  background-image: radial-gradient(var(--primary) 1.5px, transparent 1.5px);
+}
+
+/* Glow effects */
+.radial-hero-glow {
+  background: radial-gradient(circle at 45% 35%, var(--glow) 0%, transparent 65%);
+}
+
+.card-hover-glow {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover-glow:hover {
+  border-color: var(--primary);
+  box-shadow: 0 12px 36px -8px var(--glow);
+  transform: translateY(-2px);
+}
+
+/* WhatsApp floating pulse */
+@keyframes wa-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+}
+
+.wa-btn-pulse {
+  animation: wa-pulse 2.5s infinite;
+}
+
+/* Ambient dynamic background lighting animations */
+@keyframes ambient-glow-drift {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.45;
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.12);
+    opacity: 0.65;
+  }
+  66% {
+    transform: translate(-30px, 20px) scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+/* Professional Sleek Animations & Transitions */
+@keyframes smooth-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes smooth-modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.animate-fade-in {
+  animation: smooth-fade-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-modal-in {
+  animation: smooth-modal-in 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Tab Switching Smooth Crossfade */
+.tab-content-enter {
+  animation: smooth-fade-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth Interactive Click Feedback */
+button:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-btn-pulse, .animate-ambient-glow, .animate-fade-in, .animate-modal-in, .tab-content-enter {
+    animation: none !important;
+    transition: none !important;
+  }
+  .card-hover-glow:hover {
+    transform: none;
+  }
+}
+
+/* ========================================================================= */
+/* CRITICAL FIX: ADMIN PANEL LIGHT MODE VISIBILITY, CONTRAST & BORDERS       */
+/* ========================================================================= */
+.admin-light-mode {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+/* 1. TEXT & TYPOGRAPHY: Crisp Black / Dark Charcoal on Light Surfaces */
+.admin-light-mode .text-white,
+.admin-light-mode h1.text-white,
+.admin-light-mode h2.text-white,
+.admin-light-mode h3.text-white,
+.admin-light-mode h4.text-white,
+.admin-light-mode p.text-white,
+.admin-light-mode span.text-white,
+.admin-light-mode strong.text-white,
+.admin-light-mode div.text-white,
+.admin-light-mode td.text-white,
+.admin-light-mode th.text-white {
+  color: #0F172A !important;
+}
+
+.admin-light-mode .text-white\/90,
+.admin-light-mode .text-white\/80 {
+  color: #1E293B !important;
+}
+
+.admin-light-mode .text-white\/70,
+.admin-light-mode .text-white\/60 {
+  color: #334155 !important;
+}
+
+.admin-light-mode .text-white\/50,
+.admin-light-mode .text-white\/40 {
+  color: #475569 !important;
+}
+
+.admin-light-mode .text-white\/30,
+.admin-light-mode .text-white\/20,
+.admin-light-mode .text-white\/10 {
+  color: #64748B !important;
+}
+
+/* 2. BORDERS & DIVIDERS: Clear dark-slate/gray borders around cards, sidebars, tables */
+.admin-light-mode .border-white\/10,
+.admin-light-mode .border-white\/5,
+.admin-light-mode .border-white\/15,
+.admin-light-mode .border-white\/20,
+.admin-light-mode .border-white\/25,
+.admin-light-mode .border-white\/30,
+.admin-light-mode .border-white\/40,
+.admin-light-mode .border-white\/50 {
+  border-color: #94A3B8 !important;
+}
+
+.admin-light-mode .divide-white\/5 > * + *,
+.admin-light-mode .divide-white\/10 > * + * {
+  border-color: #CBD5E1 !important;
+}
+
+/* 3. CONTAINERS & CARDS: Distinct background colors & visible hover states */
+.admin-light-mode .bg-black\/40,
+.admin-light-mode .bg-black\/50,
+.admin-light-mode .bg-black\/60,
+.admin-light-mode .bg-black\/70,
+.admin-light-mode .bg-black\/80 {
+  background-color: #F1F5F9 !important;
+  border-color: #CBD5E1 !important;
+  color: #0F172A !important;
+}
+
+.admin-light-mode .bg-black\/20,
+.admin-light-mode .bg-white\/5 {
+  background-color: #F8FAFC !important;
+  border-color: #CBD5E1 !important;
+  color: #0F172A !important;
+}
+
+.admin-light-mode .bg-white\/10 {
+  background-color: #E2E8F0 !important;
+  border-color: #94A3B8 !important;
+  color: #0F172A !important;
+}
+
+.admin-light-mode .hover\:bg-white\/5:hover {
+  background-color: #E2E8F0 !important;
+}
+
+.admin-light-mode .hover\:bg-white\/10:hover {
+  background-color: #CBD5E1 !important;
+}
+
+/* 4. FORM INPUTS & SELECTS */
+.admin-light-mode input,
+.admin-light-mode select,
+.admin-light-mode textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #94A3B8 !important;
+}
+
+.admin-light-mode input::placeholder,
+.admin-light-mode textarea::placeholder {
+  color: #64748B !important;
+}
+
+.admin-light-mode option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+/* 5. GRAPHS & CHARTS: High-contrast gridlines and axes labels */
+.admin-light-mode svg line {
+  stroke: #94A3B8 !important;
+  stroke-dasharray: 4 4 !important;
+  opacity: 0.6 !important;
+}
+
+.admin-light-mode svg text {
+  fill: #0F172A !important;
+  font-weight: 600 !important;
+}
+
+/* 6. SOLID ACCENT BUTTONS: Preserve crisp white text on colored backgrounds */
+.admin-light-mode [data-btn-accent="true"],
+.admin-light-mode [data-btn-accent="true"] *,
+.admin-light-mode button[style*="backgroundColor"],
+.admin-light-mode button[style*="background-color"],
+.admin-light-mode .bg-emerald-600,
+.admin-light-mode .bg-emerald-600 *,
+.admin-light-mode .bg-emerald-500,
+.admin-light-mode .bg-emerald-500 *,
+.admin-light-mode .bg-red-500,
+.admin-light-mode .bg-red-500 *,
+.admin-light-mode .bg-red-600,
+.admin-light-mode .bg-red-600 *,
+.admin-light-mode .bg-blue-600,
+.admin-light-mode .bg-blue-600 * {
+  color: #FFFFFF !important;
+}
+
+/* 7. BADGES & PILLS: High-contrast tones in Light Mode */
+.admin-light-mode .text-emerald-400,
+.admin-light-mode .text-emerald-300 {
+  color: #047857 !important;
+}
+.admin-light-mode .text-amber-400,
+.admin-light-mode .text-amber-300 {
+  color: #B45309 !important;
+}
+.admin-light-mode .text-purple-400,
+.admin-light-mode .text-purple-300 {
+  color: #6D28D9 !important;
+}
+.admin-light-mode .text-pink-400,
+.admin-light-mode .text-pink-300 {
+  color: #BE185D !important;
+}
+.admin-light-mode .text-blue-400,
+.admin-light-mode .text-sky-400 {
+  color: #1D4ED8 !important;
+}
+
+

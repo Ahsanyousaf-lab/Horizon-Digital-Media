@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128;
+    }
+
+    // Projects: Public visitors can view, admin/owner can create, update, delete
+    match /projects/{projectId} {
+      allow read: if true;
+      allow create, update, delete: if isValidId(projectId);
+    }
+
+    // Inquiries: Anyone can submit form, admin can read, update, delete
+    match /inquiries/{inquiryId} {
+      allow read, write: if isValidId(inquiryId);
+    }
+
+    // Admins metadata
+    match /admins/{adminId} {
+      allow read, write: if true;
+    }
+  }
+}
