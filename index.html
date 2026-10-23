@@ -1,23 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Horizon Digital Media</title>
-    <meta name="description" content="Creative production and digital services studio founded by Ahsan Yousaf, specializing in video editing, graphic design, UGC, CGI ads, AI video, and custom web development." />
-    <meta property="og:title" content="Horizon Digital Media" />
-    <meta property="og:description" content="Creative production and digital services studio founded by Ahsan Yousaf, specializing in video editing, graphic design, UGC, CGI ads, AI video, and custom web development." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <!-- Google Fonts: Inter & Space Grotesk -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- Font Awesome 6.5.2 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
-  <body class="bg-[#070D18] text-[#f6fbff] antialiased selection:bg-[#00A88F]/30 selection:text-white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon Digital Media</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+    <header>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;font-weight:bold;color:#070D18;font-size:20px;">H</div>
+        <span class="brand-font" style="font-weight:bold;font-size:18px;color:var(--text);">Horizon Digital Media</span>
+      </div>
+      <nav style="display:flex;gap:16px;align-items:center;">
+        <a href="index.html" style="color:var(--secondary);text-decoration:none;font-size:14px;font-weight:600;">Home</a>
+        <a href="services.html" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;">Services</a>
+        <a href="about.html" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;">About</a>
+        <a href="contact.html" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;">Contact</a>
+        <a href="terms.html" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;">Terms</a>
+      </nav>
+      <div class="theme-palette">
+        <button class="theme-dot" data-color="teal" style="background:#00A88F;"></button>
+        <button class="theme-dot" data-color="crimson" style="background:#E50914;"></button>
+        <button class="theme-dot" data-color="blue" style="background:#0066FF;"></button>
+        <button class="theme-dot" data-color="emerald" style="background:#10B981;"></button>
+        <button class="theme-dot" data-color="yellow" style="background:#F59E0B;"></button>
+        <button id="mode-toggle-btn" style="background:transparent;border:none;color:var(--muted);cursor:pointer;margin-left:6px;"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </header>
+
+  <main style="max-width:1200px;margin:3rem auto;padding:0 2rem;">
+    <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:center;">
+      <div>
+        <div style="color:var(--secondary);font-size:13px;font-weight:700;letter-spacing:2px;margin-bottom:1.5rem;">PAKISTAN-BASED CREATIVE PARTNER FOR GLOBAL BRANDS</div>
+        <h1 style="font-size:48px;line-height:1.1;margin-bottom:1.5rem;">
+          Hi, I’m <span style="color:var(--secondary);">Ahsan Yousaf</span> —<br>
+          Founder of Horizon<br>
+          Digital Media.
+        </h1>
+        <p style="color:var(--muted);font-size:16px;line-height:1.6;margin-bottom:2rem;">
+          4+ Years Transforming Ideas into High-Converting Digital Media. I combine visual storytelling, post-production, design, UGC, CGI and AI workflows to help brands communicate with clarity and impact.
+        </p>
+        <div style="display:flex;gap:1rem;">
+          <a href="contact.html" class="btn-primary">Start a Project →</a>
+          <a href="services.html" class="btn-secondary">Explore Portfolio</a>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:3rem 2rem;text-align:center;">
+        <div style="font-size:48px;color:var(--secondary);margin-bottom:1rem;"><i class="fa-solid fa-user-tie"></i></div>
+        <h3 style="font-size:20px;margin-bottom:0.5rem;">Hero Portrait</h3>
+        <p style="color:var(--muted);font-size:13px;margin-bottom:1.5rem;">Place hero-profile.jpg beside the HTML files</p>
+        <div style="background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:1rem;text-align:left;">
+          <div style="font-weight:bold;font-size:15px;">Ahsan Yousaf</div>
+          <div style="color:var(--muted);font-size:12px;">Founder • Lead Creative Director • AI Specialist</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+    <footer style="background:var(--surface);border-top:1px solid var(--line);padding:3rem 2rem 2rem;margin-top:4rem;">
+      <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;">
+        <div>
+          <div style="font-weight:bold;font-size:18px;margin-bottom:8px;">Horizon Digital Media</div>
+          <p style="color:var(--muted);font-size:13px;max-width:320px;">Transforming ideas into high-converting digital media through post-production, design, UGC, CGI, and AI workflows.</p>
+        </div>
+        <div style="color:var(--muted);font-size:13px;">
+          <div>Founder: Ahsan Yousaf</div>
+          <div>Direct: horizondigitalmedia.official@gmail.com</div>
+          <div>WhatsApp: 03244528683</div>
+          <div style="display:flex;gap:10px;margin:10px 0;">
+            <a href="https://wa.me/923244528683" target="_blank" style="color:#25D366;text-decoration:none;"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:horizondigitalmedia.official@gmail.com" style="color:var(--secondary);text-decoration:none;"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://vm.tiktok.com/ZS9DBEx7RqMWa-LXXM6/" target="_blank" style="color:#00F2FE;text-decoration:none;"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1cBv9dCK2S/" target="_blank" style="color:#1877F2;text-decoration:none;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/horizon.digital.media?stkn=YW9ocXVwcnFvMzVp" target="_blank" style="color:#E1306C;text-decoration:none;"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <div style="margin-top:8px;">© 2026 Horizon Digital Media. All Rights Reserved.</div>
+        </div>
+      </div>
+    </footer>
+    <a href="https://wa.me/923244528683" class="wa-float" target="_blank">
+      <i class="fa-brands fa-whatsapp" style="font-size:22px;"></i>
+      <span>WhatsApp</span>
+    </a>
+
+  <script src="script.js"></script>
+</body>
 </html>

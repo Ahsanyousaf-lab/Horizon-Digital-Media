@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Horizon Digital Media</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  
+    <header>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;font-weight:bold;color:#070D18;font-size:20px;">H</div>
+        <span class="brand-font" style="font-weight:bold;font-size:18px;color:var(--text);">Horizon Digital Media</span>
+      </div>
+      <nav style="display:flex;gap:16px;align-items:center;">
+        <a href="index.html" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;">Home</a>
+        <a href="services.html" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;">Services</a>
+        <a href="about.html" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;">About</a>
+        <a href="contact.html" style="color:var(--secondary);text-decoration:none;font-size:14px;font-weight:600;">Contact</a>
+        <a href="terms.html" style="color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;">Terms</a>
+      </nav>
+      <div class="theme-palette">
+        <button class="theme-dot" data-color="teal" style="background:#00A88F;"></button>
+        <button class="theme-dot" data-color="crimson" style="background:#E50914;"></button>
+        <button class="theme-dot" data-color="blue" style="background:#0066FF;"></button>
+        <button class="theme-dot" data-color="emerald" style="background:#10B981;"></button>
+        <button class="theme-dot" data-color="yellow" style="background:#F59E0B;"></button>
+        <button id="mode-toggle-btn" style="background:transparent;border:none;color:var(--muted);cursor:pointer;margin-left:6px;"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </header>
+
+  <main style="max-width:1200px;margin:3rem auto;padding:0 2rem;">
+    <div style="color:var(--secondary);font-size:13px;font-weight:700;letter-spacing:2px;">START A PROJECT</div>
+    <h1 style="font-size:42px;margin:0.5rem 0 1.5rem;">Let’s Discuss Your Next Project.</h1>
+    <form id="project-inquiry-form" style="background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:2.5rem;max-width:700px;display:flex;flex-direction:column;gap:1rem;">
+      <input type="text" name="fullName" placeholder="Full Name" required style="padding:12px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line);color:var(--text);">
+      <input type="email" name="email" placeholder="Email Address" required style="padding:12px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line);color:var(--text);">
+      <input type="tel" name="phone" placeholder="Phone / WhatsApp" style="padding:12px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line);color:var(--text);">
+      <select name="budget" id="budget-select" style="padding:12px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line);color:var(--text);">
+        <option value="$2,500">$2,500</option>
+        <option value="$500">$500</option>
+        <option value="$1,000">$1,000</option>
+        <option value="$5,000">$5,000</option>
+        <option value="$10,000">$10,000</option>
+        <option value="$20,000+">$20,000+</option>
+        <option value="Customize">Customize</option>
+      </select>
+      <div id="custom-budget-wrap" style="display:none;">
+        <input type="number" name="customBudget" placeholder="Specify Budget (USD)" style="width:100%;padding:12px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line);color:var(--text);">
+      </div>
+      <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
+        <input type="checkbox" id="rush-delivery-checkbox" name="rushDelivery">
+        <span>Urgent rush delivery (24–48h)</span>
+      </label>
+      <div id="rush-delivery-notice" style="display:none;color:#FCD34D;font-size:12px;">Flat $100 express rush fee applies. Advance payment required.</div>
+      <textarea name="description" placeholder="Project Description" rows="4" style="padding:12px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line);color:var(--text);"></textarea>
+      <button type="submit" class="btn-primary" style="justify-content:center;">Submit Project Brief</button>
+    </form>
+  </main>
+  
+    <footer style="background:var(--surface);border-top:1px solid var(--line);padding:3rem 2rem 2rem;margin-top:4rem;">
+      <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;">
+        <div>
+          <div style="font-weight:bold;font-size:18px;margin-bottom:8px;">Horizon Digital Media</div>
+          <p style="color:var(--muted);font-size:13px;max-width:320px;">Transforming ideas into high-converting digital media through post-production, design, UGC, CGI, and AI workflows.</p>
+        </div>
+        <div style="color:var(--muted);font-size:13px;">
+          <div>Founder: Ahsan Yousaf</div>
+          <div>Direct: horizondigitalmedia.official@gmail.com</div>
+          <div>WhatsApp: 03244528683</div>
+          <div style="display:flex;gap:10px;margin:10px 0;">
+            <a href="https://wa.me/923244528683" target="_blank" style="color:#25D366;text-decoration:none;"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:horizondigitalmedia.official@gmail.com" style="color:var(--secondary);text-decoration:none;"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://vm.tiktok.com/ZS9DBEx7RqMWa-LXXM6/" target="_blank" style="color:#00F2FE;text-decoration:none;"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1cBv9dCK2S/" target="_blank" style="color:#1877F2;text-decoration:none;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/horizon.digital.media?stkn=YW9ocXVwcnFvMzVp" target="_blank" style="color:#E1306C;text-decoration:none;"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <div style="margin-top:8px;">© 2026 Horizon Digital Media. All Rights Reserved.</div>
+        </div>
+      </div>
+    </footer>
+    <a href="https://wa.me/923244528683" class="wa-float" target="_blank">
+      <i class="fa-brands fa-whatsapp" style="font-size:22px;"></i>
+      <span>WhatsApp</span>
+    </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

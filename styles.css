@@ -1,0 +1,165 @@
+/* =========================================================================
+   HORIZON DIGITAL MEDIA — STANDALONE STYLESHEET
+   Design Tokens & Visual Theme System
+   ========================================================================= */
+
+:root {
+  --bg: #070D18;
+  --surface: #0d1524;
+  --surface-2: #111c2e;
+  --text: #f6fbff;
+  --muted: #9aa9bd;
+  --line: rgba(255,255,255,.09);
+  --primary: #00A88F;
+  --secondary: #00E5FF;
+  --glow: rgba(0,229,255,.22);
+  --shadow: 0 24px 70px rgba(0,0,0,.34);
+  --radius: 24px;
+  --header: 72px;
+  font-family: 'Inter', sans-serif;
+}
+
+[data-theme-mode="light"] {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --surface-2: #e9eff7;
+  --text: #081220;
+  --muted: #586981;
+  --line: rgba(0,0,0,.08);
+  --shadow: 0 16px 40px rgba(8,18,32,.06);
+}
+
+[data-color-theme="teal"] {
+  --primary: #00A88F;
+  --secondary: #00E5FF;
+  --glow: rgba(0,229,255,.22);
+}
+
+[data-color-theme="crimson"] {
+  --primary: #E50914;
+  --secondary: #FF2E38;
+  --glow: rgba(255,46,56,.22);
+}
+
+[data-color-theme="blue"] {
+  --primary: #0066FF;
+  --secondary: #00D2FF;
+  --glow: rgba(0,210,255,.22);
+}
+
+[data-color-theme="emerald"] {
+  --primary: #10B981;
+  --secondary: #34D399;
+  --glow: rgba(52,211,153,.22);
+}
+
+[data-color-theme="yellow"] {
+  --primary: #F59E0B;
+  --secondary: #FCD34D;
+  --glow: rgba(252,211,77,.22);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+h1, h2, h3, h4, .brand-font {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Header */
+header {
+  height: var(--header);
+  background: rgba(7, 13, 24, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+/* Theme Palette Dots */
+.theme-palette {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.theme-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.theme-dot.active {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+  transform: scale(1.15);
+}
+
+/* Common Components */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #070D18;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 25px var(--glow);
+  transition: opacity .2s;
+}
+.btn-primary:hover { opacity: .92; }
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: border-color .2s;
+}
+.btn-secondary:hover { border-color: var(--primary); }
+
+/* Floating WhatsApp */
+.wa-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #25D366;
+  color: #070D18;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(37,211,102,.35);
+  z-index: 999;
+}
